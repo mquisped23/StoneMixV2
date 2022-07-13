@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "470791521015",
+    "firebase_url": "https://testmateriales-default-rtdb.firebaseio.com",
+    "project_id": "testmateriales",
+    "storage_bucket": "testmateriales.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470791521015:android:6a033df58df1b6e89849f2",
+        "android_client_info": {
+          "package_name": "com.example.stonemixapp_v2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470791521015-5phprom0e574t4i5b43bcn10nsd3c88q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6f5CIUP-hazc3YvPjI7xYjICMTsBN8JU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470791521015-5phprom0e574t4i5b43bcn10nsd3c88q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

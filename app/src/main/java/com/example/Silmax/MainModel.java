@@ -1,4 +1,4 @@
-package com.example.stonemixapp_v2;
+package com.example.Silmax;
 
 public class MainModel {
     String cantidadMaterial, descripcionMaterial, nombreMaterial, urlMaterial;

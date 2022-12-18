@@ -1,4 +1,4 @@
-package com.example.stonemixapp_v2;
+package com.example.Silmax;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

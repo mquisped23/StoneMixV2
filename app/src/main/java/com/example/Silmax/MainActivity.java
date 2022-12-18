@@ -1,4 +1,4 @@
-package com.example.stonemixapp_v2;
+package com.example.Silmax;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.controls.actions.FloatAction;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +15,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
 
-    FloatingActionButton floatingActionButton;
+    FloatingActionButton floatingActionButton , floatinSalir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,36 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mainAdapter);
 
         floatingActionButton = (FloatingActionButton)findViewById(R.id.floatingActionButton);
+        floatinSalir = (FloatingActionButton)findViewById(R.id.btnSalir);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),AddActivity.class));
+            }
+        });
+
+        floatinSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Desea Cerrar Sesion?")
+                        .setContentText("Usted Cerrará Sesion")
+                        .setConfirmText("Cerrar")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismissWithAnimation();
+                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                            }
+                        })
+                        .setCancelButton("Cancelar", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismissWithAnimation();
+                            }
+                        })
+                        .show();
+
             }
         });
 

@@ -42,6 +42,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loguear(String usuario, String password) throws InterruptedException {
 
+        if(!usuario1.equals(usuario) || !password1.equals(password)){
+            new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.WARNING_TYPE)
+                    .setTitleText("Error")
+                    .setContentText("Ingrese el correo o contraseña correcta!")
+                    .show();
+            return;
+        }
+
         if(usuario1.equals(usuario) && password1.equals(password)){
 
             new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.SUCCESS_TYPE)
@@ -56,16 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                     })
                     .show();
 
-
-
         }
-        if(!usuario1.equals(usuario) && !password1.equals(password)){
-            new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Error")
-                    .setContentText("Ingrese el correo o contraseña correcta!")
-                    .show();
-            return;
-        }
+
 
 
 
